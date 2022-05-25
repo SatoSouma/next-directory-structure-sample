@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## ディレクトリ構成
 
-## Getting Started
+### public
 
-First, run the development server:
+- 画像など
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### src
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- コード類はここに纏める
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+#### components
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- 各ディレクトリ毎に styles ディレクトリや hooks ディレクトリ(organisms み)が存在する
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- atoms
+  - 最下位のパーツ、ラベルなど
+  - 処理部は書いては行けない
+- molecules
+  - 2 つ以上のパーツを組み合わせたもの
+  - 処理部は書いては行けない
+- organisms
+  - 結構でかいコンポーネント
+  - 処理部はここに書く
+- templates
+  - pages とほぼ変わらん、最上位コンポーネントに近い
+  - 処理部は書いては行けない
 
-## Learn More
+#### hooks
 
-To learn more about Next.js, take a look at the following resources:
+- page コンポーネント用の hooks を保管
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- ルーティングされる最上位コンポーネント
 
-## Deploy on Vercel
+#### utils
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-　共通・汎用的な処理を入れる
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### types
+
+- ts の型定義ファイルを入れる
+
+#### styels
+
+- page コンポーネント用の css ファイルが入る
